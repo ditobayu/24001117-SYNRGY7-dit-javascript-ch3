@@ -6,8 +6,17 @@ function sortCarByYearDescendingly(cars) {
   // Apa itu side effect?
   const result = [...cars];
 
-  // Mengurutkan mobil secara descending berdasarkan tahun pembuatannya
-  result.sort((a, b) => b.year - a.year);
+  // Implementasi algoritma pengurutan manual (bubble sort) secara descending
+  for (let i = 0; i < result.length - 1; i++) {
+    for (let j = 0; j < result.length - i - 1; j++) {
+      if (result[j].year < result[j + 1].year) {
+        // Swap
+        const temp = result[j];
+        result[j] = result[j + 1];
+        result[j + 1] = temp;
+      }
+    }
+  }
 
   // Mengembalikan array hasil sorting
   return result;

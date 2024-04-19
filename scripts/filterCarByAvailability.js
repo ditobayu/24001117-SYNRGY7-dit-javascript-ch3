@@ -6,9 +6,11 @@ function filterCarByAvailability(cars) {
   const result = [];
 
   // Memfilter mobil berdasarkan ketersediaannya
-  for (const car of cars) {
-    if (car.available) {
-      result.push(car);
+  let resultIndex = 0;
+  for (let i = 0; i < cars.length; i++) {
+    if (cars[i].available) {
+      result[resultIndex] = cars[i];
+      resultIndex++;
     }
   }
 
